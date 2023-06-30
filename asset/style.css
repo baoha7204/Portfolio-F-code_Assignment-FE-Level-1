@@ -24,6 +24,14 @@ body{
 	background: var(--bg-color);
 }
 
+a{
+	text-decoration: none;
+}
+
+li {
+	list-style: none;
+  }
+
 /*Heading*/
 .heading{
 	font-size: 5rem;
@@ -54,13 +62,11 @@ body{
 .logo{
 	font-size: 4rem;
 	color: var(--text-color);
-	text-decoration: none;
 	font-weight: 525;
 }
 
 .navbar a{
 	color: var(--text-color);
-	text-decoration: none;
 	font-size: 2rem;
 	font-weight: 450;
 	margin-left: 5rem;
@@ -69,6 +75,54 @@ body{
 
 .navbar a:hover, .navbar a.active{
 	color: var(--main-color);
+}
+
+.menu{
+	display: flex;
+}
+
+input[type=checkbox]{
+	display: none;
+} 
+  
+/* HAMBURGER MENU */
+.hamburger{
+	display: none;
+	font-size: 3rem;
+	user-select: none;
+	transition: .5s;
+}
+
+/*Responsive for medium and small devices */
+@media (max-width: 991px) {
+	.hamburger {
+		display: block;
+	}
+
+	.menu {
+		display: none;
+		position: absolute;
+		height: auto;
+		transform: translateX(-85%);
+		padding: 2rem 0;
+		background: rgba(19,36,46,0.4);
+		border-radius: 1rem;
+	}
+
+	.menu li{
+		margin-bottom: 1.5rem;
+		margin-left: -5rem;
+		text-align: right;
+	}
+
+	input[type=checkbox]:checked~.menu {
+		display: block;
+	}
+
+	input[type=checkbox]:checked~.hamburger {
+		color: var(--main-color);
+	}
+
 }
 /*End Header*/
 
@@ -114,7 +168,6 @@ body{
 	align-items: center;
 	width: 17.5rem;
 	height: 100%;
-	text-decoration: none;
 	background: var(--main-color);
 	border: .2rem solid var(--main-color);
 	border-radius: 1rem;
@@ -182,7 +235,6 @@ body{
 	background: transparent;
 	border: .2rem solid var(--main-color);
 	border-radius: 50%;
-	text-decoration: none;
 	color: var(--main-color);
 	z-index: 1;
 	overflow: hidden;
@@ -212,7 +264,8 @@ body{
 .home img, .home-imgHover {
 	position: absolute;
 	height: 90%;
-	width: 80rem;
+	min-width: 70rem;
+	min-height: 50rem;
 	bottom: 0;
 	right: 0;
 	transition: 2.5s;
@@ -524,7 +577,6 @@ body{
 	background: var(--main-color);
 	border: .2rem solid var(--main-color);
 	border-radius: 50%;
-	text-decoration: none;
 	overflow: hidden;
 	z-index: 1;
 }
